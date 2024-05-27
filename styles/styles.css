@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: minecraft;
+  src: url(./../assets/Minecraft.ttf);
+}
+
+.game-container {
+  width: 1000px;
+  height: 450px;
+  margin: 100px auto;
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+  background-image: url(./../assets/naruto_background_2.png);
+  background-size: contain;
+  animation: bg-move 5s linear infinite;
+}
+
+@keyframes bg-move {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -50%;
+  }
+}
+
+.player {
+  width: 75px;
+  height: 80px;
+  border: 2px solid blue;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  background-image: url("./../assets/naruto_running.gif");
+  background-size: 120px;
+  background-position: -25px -15px;
+}
+
+.player.jump {
+  animation: jump 1s infinite;
+  background-image: url("./../assets/naruto_jumping.gif");
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  25% {
+    bottom: 230px;
+  }
+
+  50% {
+    bottom: 230px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+.obstacle {
+  width: 95px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 80%;
+  border: 2px solid red;
+  animation: move 2s linear infinite;
+  background-image: url("./../assets/obstacle-enemy.gif");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.obstacle-m {
+  width: 90px;
+  height: 90px;
+}
+.obstacle-l {
+  width: 120px;
+  height: 120px;
+}
+.obstacle-xl {
+  width: 200px;
+  height: 200px;
+}
+
+@keyframes move {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100px;
+  }
+}
+
+.score-card {
+  font-size: 50px;
+  margin: 20px;
+  font-family: minecraft, sans-serif;
+  color: orangered;
+}
+
+.score-card span {
+  margin-right: 20px;
+}
+
+.restart {
+  visibility: hidden;
+  font-family: minecraft, sans-serif;
+  background-color: #ffffffb8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  z-index: 1;
+}
+
+.restart.show {
+  visibility: visible;
+}
+
+.restart .content {
+  display: flex;
+}
+
+.restart .restart-btn {
+  border: none;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url(./../assets/restart-button.png);
+  background-size: contain;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.restart .text {
+  align-self: end;
+}
+
+.stop.game-container,
+.stop .obstacle {
+  animation-play-state: paused;
+}
+
+.stop .player {
+  background-image: url(./../assets/naruto_jumping.gif);
+}

@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shinobi Dev's adventures</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="score-card">
+        <span>High Score: </span>
+        <span class="highscore"></span>
+        <div class="score"></div>
+      </div>
+      <div class="player"></div>
+      <div class="obstacle"></div>
+      <div class="restart">
+        <div class="content">
+          <span class="text">RESTART</span>
+          <button onclick="reset()" class="restart-btn"></button>
+        </div>
+      </div>
+    </div>
+    <script src="./src/game.js"></script>
+    <script src="./src/player.js"></script>
+    <script src="./src/obstacle.js"></script>
+  </body>
 </html>
