@@ -103,6 +103,8 @@ function randomizeObstacle() {
   }, 2000);
 }
 
+// Randomizing obstacle number
+
 // Restarting the game
 
 function restartGame() {

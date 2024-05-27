@@ -19,17 +19,46 @@ body {
   border: 1px solid;
   overflow: hidden;
   position: relative;
-  background-image: url(./../assets/naruto_background_2.png);
-  background-size: contain;
-  animation: bg-move 5s linear infinite;
+  /*background-image: url(./../assets/naruto_bg_1.png);*/
+  background-repeat: repeat-x;
+  background-size: cover;
+  animation: slide 5s linear infinite,
+  changeBackground 120s linear infinite;
 }
 
-@keyframes bg-move {
-  0% {
+@keyframes slide {
+  /* 0% {
     background-position: 100%;
   }
   100% {
     background-position: -50%;
+  } */
+  0% {
+    background-position: 1000px 0;
+  }
+  100% {
+    background-position: 0 0; 
+  }
+}
+
+@keyframes changeBackground {
+  0%, 16.67% {
+    background-image: url('./../assets/naruto_bg_8.png');
+  }
+  20%, 36.67% {
+    background-image: url('./../assets/naruto_bg_5.png');
+  }
+  40%, 56.67% {
+    background-image: url('./../assets/naruto_bg_10.png');
+  }
+  60%, 76.67% {
+    background-image: url('./../assets/naruto_bg_9.png');
+  }
+  80%, 96.67% {
+    background-image: url('./../assets/naruto_bg_1.png');
+  }
+  100% {
+    background-image: url('./../assets/naruto_bg_2.png');
   }
 }
 
