@@ -22,8 +22,7 @@ body {
   /*background-image: url(./../assets/naruto_bg_1.png);*/
   background-repeat: repeat-x;
   background-size: cover;
-  animation: slide 5s linear infinite,
-  changeBackground 120s linear infinite;
+  animation: slide 5s linear infinite, changeBackground 120s linear infinite;
 }
 
 @keyframes slide {
@@ -37,28 +36,37 @@ body {
     background-position: 1000px 0;
   }
   100% {
-    background-position: 0 0; 
+    background-position: 0 0;
   }
 }
 
 @keyframes changeBackground {
-  0%, 16.67% {
-    background-image: url('./../assets/naruto_bg_8.png');
+  0%,
+  10% {
+    background-image: url("./../assets/naruto_bg_8.png");
   }
-  20%, 36.67% {
-    background-image: url('./../assets/naruto_bg_5.png');
+  15%,
+  30% {
+    background-image: url("./../assets/naruto_bg_5.png");
   }
-  40%, 56.67% {
-    background-image: url('./../assets/naruto_bg_10.png');
+  35%,
+  50% {
+    background-image: url("./../assets/naruto_bg_10.png");
   }
-  60%, 76.67% {
-    background-image: url('./../assets/naruto_bg_9.png');
+  55%,
+  70% {
+    background-image: url("./../assets/naruto_bg_9.png");
   }
-  80%, 96.67% {
-    background-image: url('./../assets/naruto_bg_1.png');
+  75%,
+  85% {
+    background-image: url("./../assets/naruto_bg_1.png");
+  }
+  90%,
+  95% {
+    background-image: url("./../assets/naruto_bg_2.png");
   }
   100% {
-    background-image: url('./../assets/naruto_bg_2.png');
+    background-image: url("./../assets/naruto_bg_8.png");
   }
 }
 
@@ -75,7 +83,7 @@ body {
 }
 
 .player.jump {
-  animation: jump 1s infinite;
+  animation: jump 1.5s infinite;
   background-image: url("./../assets/naruto_jumping.gif");
 }
 
@@ -105,22 +113,22 @@ body {
   left: 80%;
   border: 2px solid red;
   animation: move 2s linear infinite;
-  background-image: url("./../assets/obstacle-enemy.gif");
+  background-image: url("./../assets/running_obstacle.gif");
   background-size: cover;
   background-position: bottom;
 }
 
 .obstacle-m {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
 }
 .obstacle-l {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 .obstacle-xl {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 @keyframes move {

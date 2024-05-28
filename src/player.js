@@ -13,6 +13,9 @@ function jumpListener() {
       jump();
     }
   });
+  document.addEventListener("click", function () {
+    jump();
+  });
 }
 
 let jumping = false;
@@ -90,20 +93,60 @@ function checkHighScore() {
 
 // Randomizing obstacle sizes
 
-function getRandomObstacleSize() {
-  const index = Math.floor(Math.random() * (obstacleSizes.length - 1));
-  return obstacleSizes[index];
+// function getRandomObstacleSize() {
+//   const index = Math.floor(Math.random() * (obstacleSizes.length - 1));
+//   return obstacleSizes[index];
+// }
+
+// let changeObstacleInterval;
+// function randomizeObstacle() {
+//   changeObstacleInterval = setInterval(() => {
+//     const obstacleSize = getRandomObstacleSize();
+//     obstacleElement.className = `obstacle obstacle-${obstacleSize}`;
+//   }, 1000);
+// }
+
+// Randomizing obstacle numbers
+const maxObstacles = 2;
+const minObstacles = 1;
+function createObstacle() {
+  const obstacle = document.createElement("div");
+  obstacle.className = "obstacle";
+  return obstacle;
 }
 
-let changeObstacleInterval;
-function randomizeObstacle() {
-  changeObstacleInterval = setInterval(() => {
-    const obstacleSize = getRandomObstacleSize();
-    obstacleElement.className = `obstacle obstacle-${obstacleSize}`;
-  }, 2000);
+function addObstacles() {
+  const numObstacles =
+    Math.floor(Math.random() * (maxObstacles - minObstacles + 1)) +
+    minObstacles;
+  for (let i = 0; i < numObstacles; i++) {
+    const obstacle = createObstacle();
+    gameContainerElement.appendChild(obstacle);
+  }
 }
 
-// Randomizing obstacle number
+// Obstacle speed up
+
+let obstacleSpeedInterval;
+function obstacleSpeedUp() {
+  let animationDuration = 2; // Initial duration in seconds
+  const speedUpInterval = 20 * 1000; // 20 seconds in milliseconds
+  const speedUpFactor = 1.2; // speed at which the obstacle will increase every 20 seconds
+
+  function updateAnimationDuration() {
+    animationDuration /= speedUpFactor;
+    obstacleElement.style.animation = "none"; // reset animation
+    obstacleElement.offsetHeight; // trigger a reflow, flushing the css changes
+    obstacleElement.style.animation = `move ${animationDuration}s linear infinite`; // reapplying animation
+  }
+
+  obstacleSpeedInterval = setInterval(updateAnimationDuration, speedUpInterval);
+
+  // setInterval(() => {
+  //   animationDuration /= speedUpFactor;
+  //   obstacleElement.style.animationDuration = `${animationDuration}s`;
+  // }, speedUpInterval);
+}
 
 // Restarting the game
 
@@ -111,6 +154,7 @@ function restartGame() {
   clearInterval(collisionInterval);
   clearInterval(scoreInterval);
   clearInterval(changeObstacleInterval);
+  clearInterval(obstacleSpeedInterval);
   restartGameElement.classList.add("show");
   gameContainerElement.classList.add("stop");
 }
@@ -124,9 +168,9 @@ function main() {
   monitorCollision();
   countScore();
   setHighScore(highScore);
-  randomizeObstacle();
+  // randomizeObstacle();
+  obstacleSpeedUp();
+  addObstacles();
 }
-
-// export { main };
 
 main();
