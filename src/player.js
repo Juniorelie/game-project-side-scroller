@@ -5,7 +5,7 @@ const highScoreElement = document.querySelector(".score-card .highscore");
 const restartGameElement = document.querySelector(".restart");
 const gameContainerElement = document.querySelector(".game-container");
 
-const obstacleSizes = ["m", "l", "xl"];
+// const obstacleSizes = ["m", "l", "xl"];
 
 function jumpListener() {
   document.addEventListener("keydown", (event) => {
@@ -29,7 +29,7 @@ function jump() {
   setTimeout(() => {
     playerElement.classList.remove("jump");
     jumping = false;
-  }, 800);
+  }, 1000);
 }
 
 // Checking for collision
@@ -39,7 +39,7 @@ function monitorCollision() {
   collisionInterval = setInterval(() => {
     if (isCollision()) {
       checkHighScore();
-      //   alert("You Died!");
+      // alert("You Died!");
       restartGame();
     }
   }, 10);
@@ -107,23 +107,23 @@ function checkHighScore() {
 // }
 
 // Randomizing obstacle numbers
-const maxObstacles = 2;
-const minObstacles = 1;
-function createObstacle() {
-  const obstacle = document.createElement("div");
-  obstacle.className = "obstacle";
-  return obstacle;
-}
+// const maxObstacles = 2;
+// const minObstacles = 1;
+// function createObstacle() {
+//   const obstacle = document.createElement("div");
+//   obstacle.className = "obstacle";
+//   return obstacle;
+// }
 
-function addObstacles() {
-  const numObstacles =
-    Math.floor(Math.random() * (maxObstacles - minObstacles + 1)) +
-    minObstacles;
-  for (let i = 0; i < numObstacles; i++) {
-    const obstacle = createObstacle();
-    gameContainerElement.appendChild(obstacle);
-  }
-}
+// function addObstacles() {
+//   const numObstacles =
+//     Math.floor(Math.random() * (maxObstacles - minObstacles + 1)) +
+//     minObstacles;
+//   for (let i = 0; i < numObstacles; i++) {
+//     const obstacle = createObstacle();
+//     gameContainerElement.appendChild(obstacle);
+//   }
+// }
 
 // Obstacle speed up
 
@@ -153,7 +153,7 @@ function obstacleSpeedUp() {
 function restartGame() {
   clearInterval(collisionInterval);
   clearInterval(scoreInterval);
-  clearInterval(changeObstacleInterval);
+  // clearInterval(changeObstacleInterval);
   clearInterval(obstacleSpeedInterval);
   restartGameElement.classList.add("show");
   gameContainerElement.classList.add("stop");
@@ -170,7 +170,7 @@ function main() {
   setHighScore(highScore);
   // randomizeObstacle();
   obstacleSpeedUp();
-  addObstacles();
+  // addObstacles();
 }
 
 main();
