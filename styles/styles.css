@@ -18,8 +18,8 @@ body {
   font-family: banger, sans-serif;
   font-size: 50px;
   background-image: url("./../assets/naruto-background.jpg");
+  /* background-size: cover; */
   color: orangered;
-  
 }
 
 .hidden {
@@ -144,24 +144,11 @@ body {
   bottom: 0;
   left: 80%;
   border: 2px solid red;
-  animation: move 2s linear infinite;
+  /* animation: move 2s linear infinite; */
   background-image: url("./../assets/running_obstacle.gif");
   background-size: cover;
   background-position: bottom;
 }
-
-/* .obstacle-m {
-  width: 80px;
-  height: 80px;
-}
-.obstacle-l {
-  width: 100px;
-  height: 100px;
-}
-.obstacle-xl {
-  width: 150px;
-  height: 150px;
-} */
 
 @keyframes move {
   0% {
