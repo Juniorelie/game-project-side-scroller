@@ -1,15 +1,50 @@
 * {
-  box-sizing: border-box;
-}
-
-body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
   font-family: minecraft;
   src: url(./../assets/Minecraft.ttf);
+}
+
+@font-face {
+  font-family: banger;
+  src: url(./../assets/Bangers-Regular.ttf);
+}
+
+body {
+  font-family: banger, sans-serif;
+  font-size: 50px;
+  background-image: url("./../assets/naruto-background.jpg");
+  color: orangered;
+  
+}
+
+.hidden {
+  display: none;
+}
+
+.homepage {
+  text-align: center;
+  padding: 50px;
+}
+
+.homepage .start-btn {
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.homepage .homepage-mute-btn {
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.game-container.hidden {
+  display: none;
 }
 
 .game-container {
@@ -41,29 +76,26 @@ body {
 }
 
 @keyframes changeBackground {
-  0%,
-  10% {
+  0% {
     background-image: url("./../assets/naruto_bg_8.png");
   }
-  15%,
-  30% {
+  15% {
     background-image: url("./../assets/naruto_bg_5.png");
   }
-  35%,
-  50% {
+  30% {
     background-image: url("./../assets/naruto_bg_10.png");
   }
-  55%,
-  70% {
+  45% {
     background-image: url("./../assets/naruto_bg_9.png");
   }
-  75%,
-  85% {
+  55% {
     background-image: url("./../assets/naruto_bg_1.png");
   }
-  90%,
-  95% {
+  70% {
     background-image: url("./../assets/naruto_bg_2.png");
+  }
+  85% {
+    background-image: url("./../assets/naruto_bg_6.png");
   }
   100% {
     background-image: url("./../assets/naruto_bg_8.png");
@@ -118,7 +150,7 @@ body {
   background-position: bottom;
 }
 
-.obstacle-m {
+/* .obstacle-m {
   width: 80px;
   height: 80px;
 }
@@ -129,7 +161,7 @@ body {
 .obstacle-xl {
   width: 150px;
   height: 150px;
-}
+} */
 
 @keyframes move {
   0% {
@@ -196,5 +228,20 @@ body {
 }
 
 .stop .player {
-  background-image: url(./../assets/naruto_jumping.gif);
+  background-image: url("./../assets/naruto_jumping.gif");
+}
+
+.game-mute-btn {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+.hidden {
+  display: none;
 }

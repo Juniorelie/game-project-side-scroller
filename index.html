@@ -3,27 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shinobi Dev's adventures</title>
+    <title>Shinobi Dev's Adventures</title>
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
-    <div class="game-container">
+    <div class="homepage">
+      <h1>Shinobi's Road to Fullstack !</h1>
+      <button class="start-btn">Start Game</button>
+      <audio id="background-music">
+        <source src="./assets/naruto_backgroundmusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <button class="homepage-mute-btn">Play/Pause Music</button>
+    </div>
+    <button class="game-mute-btn hidden">Play/Pause Music</button>
+    <div class="game-container hidden">
       <div class="score-card">
         <span>High Score: </span>
         <span class="highscore"></span>
         <div class="score"></div>
       </div>
       <div class="player"></div>
-      <div class="obstacle"></div>
       <div class="restart">
         <div class="content">
           <span class="text">RESTART</span>
-          <button onclick="reset()" class="restart-btn"></button>
+          <button class="restart-btn"></button>
         </div>
       </div>
     </div>
-    <script src="./src/game.js"></script>
     <script src="./src/player.js"></script>
     <script src="./src/obstacle.js"></script>
+    <script src="./src/AudioUI.js"></script>
+    <script src="./src/game.js"></script>
   </body>
 </html>
