@@ -34,13 +34,14 @@ class Game {
   startGame() {
     this.homepageElement.classList.add("hidden");
     this.gameContainerElement.classList.remove("hidden");
-    this.player.jumpListener();
-    // this.obstacles.addObstacle();
+    // this.player.jumpListener();
+    this.obstacles.addObstacle();
     this.gameLoop();
     this.audioUI.showGameMuteButton();
   }
 
   gameLoop() {
+    this.player.jumpListener();
     this.gameInterval = setInterval(() => {
       this.frameCounter++;
       if (!this.obstacles.akatsuki.length) {
@@ -95,14 +96,14 @@ class Game {
       }
     }, 1000 / 60);
 
-    // Increase obstacle speed every 15 seconds
+    // Increase obstacle speed every 20 seconds
     this.speedIncreaseInterval = setInterval(() => {
       this.increaseSpeed();
-    }, 15000);
+    }, 20000);
   }
 
   increaseSpeed() {
-    this.enemySpeed *= 1.2; // Increase the speed two times every 15 seconds
+    this.enemySpeed *= 1.2; // Increase the speed 1.2 times every 20 seconds
   }
 
   showScore(newScore) {

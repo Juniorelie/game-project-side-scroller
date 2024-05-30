@@ -10,6 +10,7 @@ class Player {
         this.jump();
       }
     });
+    document.addEventListener("click", () => this.jump());
   }
 
   jump() {

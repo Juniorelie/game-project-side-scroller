@@ -15,11 +15,10 @@
 }
 
 body {
-  font-family: banger, sans-serif;
   font-size: 50px;
+  font-family: banger, sans-serif;
   background-image: url("./../assets/naruto-background.jpg");
   /* background-size: cover; */
-  color: orangered;
 }
 
 .hidden {
@@ -29,6 +28,10 @@ body {
 .homepage {
   text-align: center;
   padding: 50px;
+}
+
+h1 {
+  color: orangered;
 }
 
 .homepage .start-btn {
@@ -76,25 +79,32 @@ body {
 }
 
 @keyframes changeBackground {
-  0% {
+  0%,
+  10% {
     background-image: url("./../assets/naruto_bg_8.png");
   }
-  15% {
+  15%,
+  25% {
     background-image: url("./../assets/naruto_bg_5.png");
   }
-  30% {
+  30%,
+  40% {
     background-image: url("./../assets/naruto_bg_10.png");
   }
-  45% {
+  45%,
+  55% {
     background-image: url("./../assets/naruto_bg_9.png");
   }
-  55% {
+  60%,
+  70% {
     background-image: url("./../assets/naruto_bg_1.png");
   }
-  70% {
+  75%,
+  85% {
     background-image: url("./../assets/naruto_bg_2.png");
   }
-  85% {
+  90%,
+  98% {
     background-image: url("./../assets/naruto_bg_6.png");
   }
   100% {
@@ -105,7 +115,7 @@ body {
 .player {
   width: 75px;
   height: 80px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   position: absolute;
   bottom: 0;
   left: 10%;
@@ -143,7 +153,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 80%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   /* animation: move 2s linear infinite; */
   background-image: url("./../assets/running_obstacle.gif");
   background-size: cover;
