@@ -125,7 +125,7 @@ h1 {
 }
 
 .player.jump {
-  animation: jump 1.5s infinite;
+  animation: jump 2.5s infinite;
   background-image: url("./../assets/naruto_jumping.gif");
 }
 
@@ -139,12 +139,17 @@ h1 {
   }
 
   50% {
-    bottom: 230px;
+    bottom: 115px;
   }
 
   100% {
     bottom: 0;
   }
+}
+
+.player.crouch {
+  animation: crouch infinite;
+  background-image: url("./../assets/naruto_crouching.gif");
 }
 
 .obstacle {

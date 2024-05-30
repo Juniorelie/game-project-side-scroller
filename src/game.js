@@ -7,8 +7,8 @@ class Game {
     this.score = 0;
     this.highScore = parseInt(sessionStorage.getItem("highscore")) || 0;
     this.frameCounter = 0;
-    this.enemySpeed = 10;
-    this.newlyAddedShinobi = false;
+    this.enemySpeed = 16;
+    // this.newlyAddedShinobi = false;
     this.gameInterval = null;
     this.speedIncreaseInterval = null;
 
@@ -34,7 +34,6 @@ class Game {
   startGame() {
     this.homepageElement.classList.add("hidden");
     this.gameContainerElement.classList.remove("hidden");
-    // this.player.jumpListener();
     this.obstacles.addObstacle();
     this.gameLoop();
     this.audioUI.showGameMuteButton();
@@ -42,8 +41,9 @@ class Game {
 
   gameLoop() {
     this.player.jumpListener();
+    this.player.crouchListener();
     this.gameInterval = setInterval(() => {
-      this.frameCounter++;
+      this.frameCounter+=2;
       if (!this.obstacles.akatsuki.length) {
         this.obstacles.akatsuki.push(this.obstacles.addObstacle());
         this.newlyAddedShinobi = true;
@@ -52,7 +52,7 @@ class Game {
         }, 5000);
       }
 
-      if (this.frameCounter % 10 === 0 && !this.newlyAddedShinobi) {
+      if (this.frameCounter % 40 === 0 && !this.newlyAddedShinobi) {
         if (Math.random() > 0.98) {
           this.obstacles.akatsuki.push(this.obstacles.addObstacle());
           this.newlyAddedShinobi = true;
@@ -64,12 +64,6 @@ class Game {
 
       for (const badGuy of this.obstacles.akatsuki) {
         let currentPosition = parseInt(badGuy.style.left);
-        // if (currentPosition <= 0) {
-        //     badGuy.remove(); // Remove the obstacle when it goes off-screen
-        // } else {
-        //     currentPosition -= this.enemySpeed;
-        //     badGuy.style.left = `${currentPosition}px`;
-        // }
         if (currentPosition <= 0) {
           badGuy.style.left = `1000px`;
         } else if (currentPosition) {
@@ -79,9 +73,6 @@ class Game {
           badGuy.style.left = `1000px`;
         }
         if (this.obstacles.isCollision(this.player.playerElement, badGuy)) {
-          // clearInterval(this.gameInterval);
-          // clearInterval(this.speedIncreaseInterval);
-
           // Remove all obstacles
           console.log(this.obstacles);
           this.obstacles.reset();
@@ -90,20 +81,20 @@ class Game {
           return;
         }
       }
-      if (this.frameCounter % 5 === 0) {
+      if (this.frameCounter % 4 === 0) {
         // Update score
         this.countScore();
       }
     }, 1000 / 60);
 
-    // Increase obstacle speed every 20 seconds
+    // Increase obstacle speed every 15 seconds
     this.speedIncreaseInterval = setInterval(() => {
       this.increaseSpeed();
-    }, 20000);
+    }, 15000);
   }
 
   increaseSpeed() {
-    this.enemySpeed *= 1.2; // Increase the speed 1.2 times every 20 seconds
+    this.enemySpeed += 3; // Increment the speed by 3 every 15 seconds
   }
 
   showScore(newScore) {
@@ -134,18 +125,11 @@ class Game {
   }
 
   reset() {
-    // Reset the game state without reloading the page
-    // clearInterval(this.gameInterval);
-    // clearInterval(this.speedIncreaseInterval);
-
-    // Remove all obstacles
-    // this.obstacles.akatsuki.forEach((obstacle) => obstacle.remove());
-    // this.obstacles.akatsuki = [];
     // console.log(this.obstacles);
     // Reset score and other game parameters
     this.score = 0;
     this.frameCounter = 0;
-    this.enemySpeed = 10;
+    this.enemySpeed = 16;
     this.newlyAddedShinobi = false;
 
     // Reset UI elements
