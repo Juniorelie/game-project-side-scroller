@@ -125,7 +125,7 @@ h1 {
 }
 
 .player.jump {
-  animation: jump 2.5s infinite;
+  animation: jump 1.5s infinite;
   background-image: url("./../assets/naruto_jumping.gif");
 }
 

@@ -7,8 +7,8 @@ class Game {
     this.score = 0;
     this.highScore = parseInt(sessionStorage.getItem("highscore")) || 0;
     this.frameCounter = 0;
-    this.enemySpeed = 16;
-    // this.newlyAddedShinobi = false;
+    this.enemySpeed = 11;
+    this.newlyAddedShinobi = false;
     this.gameInterval = null;
     this.speedIncreaseInterval = null;
 
@@ -43,7 +43,7 @@ class Game {
     this.player.jumpListener();
     this.player.crouchListener();
     this.gameInterval = setInterval(() => {
-      this.frameCounter+=2;
+      this.frameCounter += 3;
       if (!this.obstacles.akatsuki.length) {
         this.obstacles.akatsuki.push(this.obstacles.addObstacle());
         this.newlyAddedShinobi = true;
@@ -129,7 +129,7 @@ class Game {
     // Reset score and other game parameters
     this.score = 0;
     this.frameCounter = 0;
-    this.enemySpeed = 16;
+    this.enemySpeed = 11;
     this.newlyAddedShinobi = false;
 
     // Reset UI elements
