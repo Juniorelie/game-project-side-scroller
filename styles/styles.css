@@ -34,11 +34,36 @@ h1 {
   color: orangered;
   margin: 20px auto;
   letter-spacing: 0.3rem;
+  animation: drop 0.4s linear forwards;
 }
 
 p {
   margin: 20px auto;
   letter-spacing: 0.3rem;
+  animation: drop 0.4s linear forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-200px) scaleY(0.9);
+  }
+  5% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+  }
+  65% {
+    transform: translate(-17px) scaleY(0.9);
+  }
+  75% {
+    transform: translate(-22px) scaleY(0.9);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+  }
 }
 
 .homepage .start-btn {
@@ -51,6 +76,7 @@ p {
   border: none;
   transition: 1s ease-in-out;
   letter-spacing: 0.3rem;
+  animation: drop 0.4s linear forwards;
 }
 
 .start-btn:hover {
@@ -68,6 +94,7 @@ p {
   border: none;
   transition: 1s ease-in-out;
   letter-spacing: 0.3rem;
+  animation: drop 0.4s linear forwards;
 }
 
 .homepage-mute-btn:hover {
@@ -264,10 +291,10 @@ p {
 
 .game-mute-btn {
   position: absolute;
-  top: 10px;
-  left: 50%;
+  top: 40px;
+  left: 45%;
   transform: translateX(-50%);
-  transform: translateY(80%);
+  /* transform: translateY(80%); */
   /* transform: translate(-50%, -80%) */
   font-size: 24px;
   padding: 10px 20px;
@@ -280,6 +307,7 @@ p {
   cursor: pointer;
   display: none;
   letter-spacing: 0.3rem;
+  animation: drop 0.4s linear forwards;
 }
 
 /* .game-home-btn {
