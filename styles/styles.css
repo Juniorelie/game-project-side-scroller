@@ -32,18 +32,47 @@ body {
 
 h1 {
   color: orangered;
+  margin: 20px auto;
+  letter-spacing: 0.3rem;
+}
+
+p {
+  margin: 20px auto;
+  letter-spacing: 0.3rem;
 }
 
 .homepage .start-btn {
   font-size: 24px;
   padding: 10px 20px;
   cursor: pointer;
+  background-color: #2e5990;
+  font-family: banger;
+  border-radius: 10px;
+  border: none;
+  transition: 1s ease-in-out;
+  letter-spacing: 0.3rem;
+}
+
+.start-btn:hover {
+  background-color: orangered;
+  color: white;
 }
 
 .homepage .homepage-mute-btn {
   font-size: 24px;
   padding: 10px 20px;
   cursor: pointer;
+  background-color: #2e5990;
+  font-family: banger;
+  border-radius: 10px;
+  border: none;
+  transition: 1s ease-in-out;
+  letter-spacing: 0.3rem;
+}
+
+.homepage-mute-btn:hover {
+  background-color: orangered;
+  color: white;
 }
 
 .game-container.hidden {
@@ -238,11 +267,48 @@ h1 {
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+  transform: translateY(80%);
+  /* transform: translate(-50%, -80%) */
+  font-size: 24px;
   padding: 10px 20px;
-  font-size: 16px;
+  cursor: pointer;
+  background-color: #2e5990;
+  font-family: banger;
+  border-radius: 10px;
+  border: none;
+  transition: 1s ease-in-out;
   cursor: pointer;
   display: none;
+  letter-spacing: 0.3rem;
 }
+
+/* .game-home-btn {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #2e5990;
+  font-family: banger;
+  border-radius: 10px;
+  border: none;
+  transition: 1s ease-in-out;
+  cursor: pointer;
+  display: none;
+  letter-spacing: 0.3rem;
+} */
+
+.game-mute-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+
+/* .game-home-btn:hover {
+  background-color: orangered;
+  color: white;
+} */
 
 .hidden {
   display: none;

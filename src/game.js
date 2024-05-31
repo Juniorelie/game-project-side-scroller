@@ -15,6 +15,7 @@ class Game {
     this.startButton = document.querySelector(".start-btn");
     this.restartButton = document.querySelector(".restart-btn");
     this.gameMuteButton = document.querySelector(".game-mute-btn");
+    // this.gameHomeButton = document.querySelector(".game-home-btn");
     this.homepageElement = document.querySelector(".homepage");
     this.gameContainerElement = document.querySelector(".game-container");
     this.scoreElement = document.querySelector(".score-card .score");
@@ -26,6 +27,9 @@ class Game {
     this.gameMuteButton.addEventListener("click", () =>
       this.audioUI.toggleGameMute()
     );
+    // this.gameHomeButton.addEventListener("click", () =>
+    //   this.audioUI.location.reload()
+    // );
 
     this.highScoreElement.innerText = this.highScore;
     this.audioUI.init();
@@ -37,13 +41,14 @@ class Game {
     this.obstacles.addObstacle();
     this.gameLoop();
     this.audioUI.showGameMuteButton();
+    // this.audioUI.showGameHomeButton();
   }
 
   gameLoop() {
     this.player.jumpListener();
     this.player.crouchListener();
     this.gameInterval = setInterval(() => {
-      this.frameCounter += 3;
+      this.frameCounter += 2;
       if (!this.obstacles.akatsuki.length) {
         this.obstacles.akatsuki.push(this.obstacles.addObstacle());
         this.newlyAddedShinobi = true;

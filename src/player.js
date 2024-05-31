@@ -3,6 +3,7 @@ class Player {
     this.playerElement = document.querySelector(".player");
     this.jumping = false;
     this.crouching = false;
+    // this.jumpSound = document.getElementById("jump-sound");
   }
 
   jumpListener() {
@@ -17,6 +18,7 @@ class Player {
   jump() {
     if (this.jumping) return;
     this.jumping = true;
+    // this.jumpSound.play(); // Play the jump sound
     this.playerElement.classList.add("jump");
     setTimeout(() => {
       this.playerElement.classList.remove("jump");

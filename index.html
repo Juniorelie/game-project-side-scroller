@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shinobi Dev's Adventures</title>
     <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <div class="homepage">
       <h1>Shinobi's Road to Fullstack !</h1>
-      <p>To play use the spacebar, up arrow key or left click</p> 
+      <p>How to play:</p>
+      <p>press space, up arrow or left click to jump</p>
       <button class="start-btn">Start Game</button>
       <audio id="background-music">
         <source src="./assets/naruto_backgroundmusic.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <button class="homepage-mute-btn">Play/Pause Music</button>
+      <button class="homepage-mute-btn">Play Music</button>
     </div>
-    <button class="game-mute-btn hidden">Play/Pause Music</button>
+    <button class="game-mute-btn hidden">Play Music</button>
+    <!-- <button class="game-home-btn hidden">Back to homepage</button> -->
     <div class="game-container hidden">
       <div class="score-card">
         <span>High Score: </span>
@@ -36,6 +38,10 @@
         </div>
       </div>
     </div>
+    <!-- <audio id="jump-sound">
+      <source src="./assets/Naruto_jump_sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio> -->
     <script src="./src/player.js"></script>
     <script src="./src/obstacle.js"></script>
     <script src="./src/AudioUI.js"></script>
