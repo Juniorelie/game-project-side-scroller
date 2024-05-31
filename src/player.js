@@ -41,6 +41,6 @@ class Player {
     setTimeout(() => {
       this.playerElement.classList.remove("crouch");
       this.crouching = false;
-    }, 800);
+    }, 300);
   }
 }

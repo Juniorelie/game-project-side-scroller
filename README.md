@@ -21,7 +21,7 @@ But instead of following the road to become the Hokage, here Naruto is aiming fo
 
 - Naruto (The main selling point of course)
 - Precision and anticipation difficulty
-- Obstacles appearing in numbers randomly _Math.random()_
+- Obstacles appearing in numbers randomly
 - Highscore setter so you can brag about it
 
 ## Issues
@@ -34,11 +34,4 @@ But instead of following the road to become the Hokage, here Naruto is aiming fo
 - Adding a choose your character screen
 - Possibly different stages
 - A variety of obstacles enemies
-- A crouching animation
-- Responsive Design ?
-  <br>
-  <br>
-  <br>
-  <br>
-
-_By the way BERSERK is my favorite manga just wanted to mention it_
+- Responsive Design

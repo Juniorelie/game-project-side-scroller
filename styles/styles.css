@@ -177,7 +177,7 @@ p {
 }
 
 .player.crouch {
-  animation: crouch infinite;
+  animation: crouch 0.3s infinite;
   background-image: url("./../assets/naruto_crouching.gif");
 }
 

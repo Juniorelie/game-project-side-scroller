@@ -48,7 +48,7 @@ class Game {
     this.player.jumpListener();
     this.player.crouchListener();
     this.gameInterval = setInterval(() => {
-      this.frameCounter += 2;
+      this.frameCounter++;
       if (!this.obstacles.akatsuki.length) {
         this.obstacles.akatsuki.push(this.obstacles.addObstacle());
         this.newlyAddedShinobi = true;
@@ -58,7 +58,7 @@ class Game {
       }
 
       if (this.frameCounter % 40 === 0 && !this.newlyAddedShinobi) {
-        if (Math.random() > 0.98) {
+        if (Math.random() > 0.99) {
           this.obstacles.akatsuki.push(this.obstacles.addObstacle());
           this.newlyAddedShinobi = true;
           setTimeout(() => {
@@ -99,7 +99,7 @@ class Game {
   }
 
   increaseSpeed() {
-    this.enemySpeed += 3; // Increment the speed by 3 every 15 seconds
+    this.enemySpeed += 2; // Increment the speed by 3 every 15 seconds
   }
 
   showScore(newScore) {
