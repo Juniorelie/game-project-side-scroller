@@ -274,6 +274,7 @@ p {
   background-size: contain;
   margin-left: 15px;
   cursor: pointer;
+  border-radius: 50px;
 }
 
 .restart .text {
